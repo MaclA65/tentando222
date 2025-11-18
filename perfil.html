@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Perfil - Professor</title>
+  <link rel="stylesheet" href="perfil-professor.css" />
+</head>
+
+<body>
+  <main class="perfil-container">
+    <!-- TOPO DO PERFIL -->
+    <section class="perfil-topo">
+      <div class="avatar-area">
+        <div class="avatar-borda">
+          <img id="avatar-img" src="macaco desgraçado.png" alt="Avatar do professor">
+          <button id="mudar-avatar" title="Trocar avatar">👤</button>
+        </div>
+
+        <div class="nome-area">
+          <h1 id="nome-usuario">Professor</h1>
+          <button id="editar-nome" title="Editar informações">✏️</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARDS DE INFORMAÇÕES -->
+    <section class="perfil-info">
+      <!-- CARD IDADE -->
+      <div class="card card-idade" id="card-idade">
+        <h2>Idade</h2>
+        <p id="display-idade">Não informada</p>
+      </div>
+
+      <!-- CARD FORMAÇÃO 1 -->
+      <div class="card card-formacao1" id="card-formacao1">
+        <h2>Formação 1</h2>
+        <p id="display-formacao1">Não informada</p>
+      </div>
+
+      <!-- CARD FORMAÇÃO 2 -->
+      <div class="card card-formacao2" id="card-formacao2">
+        <h2>Formação 2</h2>
+        <p id="display-formacao2">Não informada</p>
+      </div>
+
+      <!-- CARD FORMAÇÃO 3 -->
+      <div class="card card-formacao3" id="card-formacao3">
+        <h2>Formação 3</h2>
+        <p id="display-formacao3">Não informada</p>
+      </div>
+
+      <!-- CARD HORÁRIOS -->
+      <div class="card card-horarios" id="card-horarios">
+        <h2>Horários de Aula</h2>
+        <p id="display-horarios">Não definidos</p>
+      </div>
+
+      <!-- CARD DISCIPLINAS -->
+      <div class="card card-disciplinas" id="card-disciplinas">
+        <h2>Disciplinas</h2>
+        <p id="display-disciplinas">Não definidas</p>
+      </div>
+
+      <!-- NOVO CARD RANKING -->
+      <div class="card card-ranking" id="card-ranking">
+        <h2>Ranking</h2>
+        <p id="display-ranking">Posição #1 🏆</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="app-footer">
+    <div class="footer-content">
+        <p>📞 <strong>DEPARTAMENTO DE TUTORIA</strong></p>
+        <p>✉️ contato@tutoria.com | 📱 (11) 9999-9999</p>
+        <div class="footer-links">
+            <button onclick="abrirSobre()">Sobre</button>
+            <button onclick="abrirAjuda()">Ajuda</button>
+            <button onclick="abrirConfiguracoes()">Configurações</button>
+        </div>
+    </div>
+  </footer>
+  
+  <!-- MODAL DE AJUSTES -->
+  <div class="ajustes-modal" id="ajustes-modal">
+    <div class="ajustes-content">
+      <h2>Editar Informações</h2>
+
+      <div class="form-group">
+        <label>Nome:</label>
+        <input type="text" id="nome-input">
+      </div>
+
+      <div class="form-group">
+        <label>Idade:</label>
+        <input type="number" id="idade-input" min="25" max="80" placeholder="Digite sua idade">
+      </div>
+
+      <div class="form-group">
+        <label>Formação 1 (Bacharelado):</label>
+        <select id="formacao1-input">
+          <option value="">Selecione uma formação</option>
+          <option>Matemática</option>
+          <option>Física</option>
+          <option>Química</option>
+          <option>Biologia</option>
+          <option>Português</option>
+          <option>História</option>
+          <option>Geografia</option>
+          <option>Inglês</option>
+          <option>Educação Física</option>
+          <option>Artes</option>
+          <option>Outro</option>
+        </select>
+        <input type="text" id="formacao1-outro" placeholder="Especifique outra formação" style="display: none; margin-top: 10px;">
+      </div>
+
+      <div class="form-group">
+        <label>Formação 2 (Bacharelado):</label>
+        <select id="formacao2-input">
+          <option value="">Selecione uma formação</option>
+          <option>Matemática</option>
+          <option>Física</option>
+          <option>Química</option>
+          <option>Biologia</option>
+          <option>Português</option>
+          <option>História</option>
+          <option>Geografia</option>
+          <option>Inglês</option>
+          <option>Educação Física</option>
+          <option>Artes</option>
+          <option>Nenhuma</option>
+          <option>Outro</option>
+        </select>
+        <input type="text" id="formacao2-outro" placeholder="Especifique outra formação" style="display: none; margin-top: 10px;">
+      </div>
+
+      <div class="form-group">
+        <label>Formação 3 (Bacharelado):</label>
+        <select id="formacao3-input">
+          <option value="">Selecione uma formação</option>
+          <option>Matemática</option>
+          <option>Física</option>
+          <option>Química</option>
+          <option>Biologia</option>
+          <option>Português</option>
+          <option>História</option>
+          <option>Geografia</option>
+          <option>Inglês</option>
+          <option>Educação Física</option>
+          <option>Artes</option>
+          <option>Nenhuma</option>
+          <option>Outro</option>
+        </select>
+        <input type="text" id="formacao3-outro" placeholder="Especifique outra formação" style="display: none; margin-top: 10px;">
+      </div>
+
+      <div class="form-group">
+        <label>Horários Disponíveis para Aula:</label>
+        <div class="horarios-grid">
+          <div class="dia-semana">
+            <label><input type="checkbox" id="seg-manha"> Segunda - Manhã</label>
+            <label><input type="checkbox" id="seg-tarde"> Segunda - Tarde</label>
+            <label><input type="checkbox" id="seg-noite"> Segunda - Noite</label>
+          </div>
+          <div class="dia-semana">
+            <label><input type="checkbox" id="ter-manha"> Terça - Manhã</label>
+            <label><input type="checkbox" id="ter-tarde"> Terça - Tarde</label>
+            <label><input type="checkbox" id="ter-noite"> Terça - Noite</label>
+          </div>
+          <div class="dia-semana">
+            <label><input type="checkbox" id="qua-manha"> Quarta - Manhã</label>
+            <label><input type="checkbox" id="qua-tarde"> Quarta - Tarde</label>
+            <label><input type="checkbox" id="qua-noite"> Quarta - Noite</label>
+          </div>
+          <div class="dia-semana">
+            <label><input type="checkbox" id="qui-manha"> Quinta - Manhã</label>
+            <label><input type="checkbox" id="qui-tarde"> Quinta - Tarde</label>
+            <label><input type="checkbox" id="qui-noite"> Quinta - Noite</label>
+          </div>
+          <div class="dia-semana">
+            <label><input type="checkbox" id="sex-manha"> Sexta - Manhã</label>
+            <label><input type="checkbox" id="sex-tarde"> Sexta - Tarde</label>
+            <label><input type="checkbox" id="sex-noite"> Sexta - Noite</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Disciplinas que Leciona:</label>
+        <div class="disciplinas-grid">
+          <label><input type="checkbox" id="disc-matematica"> Matemática</label>
+          <label><input type="checkbox" id="disc-portugues"> Português</label>
+          <label><input type="checkbox" id="disc-historia"> História</label>
+          <label><input type="checkbox" id="disc-geografia"> Geografia</label>
+          <label><input type="checkbox" id="disc-fisica"> Física</label>
+          <label><input type="checkbox" id="disc-quimica"> Química</label>
+          <label><input type="checkbox" id="disc-biologia"> Biologia</label>
+          <label><input type="checkbox" id="disc-ingles"> Inglês</label>
+          <label><input type="checkbox" id="disc-educacao-fisica"> Educação Física</label>
+          <label><input type="checkbox" id="disc-artes"> Artes</label>
+        </div>
+      </div>
+
+      <div class="ajustes-btns">
+        <button id="cancelar-ajustes">Cancelar</button>
+        <button id="salvar-ajustes">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE ESCOLHA DE AVATAR -->
+  <div class="avatar-modal" id="avatar-modal">
+    <div class="avatar-modal-content">
+      <h2>Escolha seu avatar</h2>
+
+      <div class="avatar-opcoes">
+        <img class="avatar-opcao" src="macaco desgraçado.png" alt="Avatar 1">
+        <img class="avatar-opcao" src="Javali trouxa fdp.png" alt="Avatar 2">
+        <img class="avatar-opcao" src="leao fudido.png" alt="Avatar 3">
+        <img class="avatar-opcao" src="pandaaaaaaaaaa.png" alt="Avatar 4">
+        <img class="avatar-opcao" src="cachorro miseravel fudido.png" alt="Avatar 5">
+        <img class="avatar-opcao" src="chifrudo.png" alt="Avatar 6">
+        <img class="avatar-opcao" src="aguia careca.png" alt="Avatar 7">
+        <img class="avatar-opcao" src="cabrito maldito.png" alt="Avatar 8">
+        <img class="avatar-opcao" src="hipotamo.png" alt="Avatar 9">
+        <img class="avatar-opcao" src="Inhacare.png" alt="Avatar 10">
+        <img class="avatar-opcao" src="Leo o pardo.png" alt="Avatar 11">
+        <img class="avatar-opcao" src="chifrudo.png" alt="Avatar 12">
+        <img class="avatar-opcao" src="Desgraça de papagaio.png" alt="Avatar 13">
+        <img class="avatar-opcao" src="Elefante gordo filho da puta.png" alt="Avatar 14">
+        <img class="avatar-opcao" src="gato arrombado.png" alt="Avatar 15">
+        <img class="avatar-opcao" src="Girafa filha da puta.png" alt="Avatar 16">
+        <img class="avatar-opcao" src="Mano peppa.png" alt="Avatar 17">
+        <img class="avatar-opcao" src="Sarue feio fedorento.png" alt="Avatar 18">
+        <img class="avatar-opcao" src="urso braco.png" alt="Avatar 19">
+        <img class="avatar-opcao" src="Vaca filha da puta.png" alt="Avatar 20">
+        <img class="avatar-opcao" src="pocoto.png" alt="Avatar 21">
+        <img class="avatar-opcao" src="pombo cheio de doença.png" alt="Avatar 22">
+      </div>
+
+      <button id="fechar-modal">Fechar</button>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="perfil-professor.js"></script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+body {
+  background-color: #f2f2f2;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+}
+
+.logo {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #000;
+  outline: none;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 10px;
+  background: #ffeb3b;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background: #fdd835;
+}
+
+.signup-text {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.signup-text a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+  .emoji {
+    width: 65px;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    margin-bottom: 15px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 22px;
+  }
+  
+  /* Input fields */
+  .input-group {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    background: #ffeb3b;
+    border-radius: 20px;
+    outline: none;
+    font-size: 13px;
+  }
+  
+  /* Botões de tipo de usuário */
+  .tipo-usuario {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+  }
+  
+  .btn-tipo {
+    flex: 1;
+    margin: 0 5px;
+    padding: 8px 0;
+    background: #ffeb3b;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .btn-tipo.active {
+    background: #fdd835;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Botão Confirmar */
+  .btn-confirmar {
+    width: 100%;
+    padding: 10px;
+    background: #ffeb3b;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+  }
+  
+  .btn-confirmar:hover {
+    background: #fdd835;
+  }
+
+  /*pergunatas 1 do professor*/
+  .conteudo {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .topo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* espaço entre emoji e balão */
+    margin-bottom: 40px;
+  }
+  
+  
+  .tutor{
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    background: transparent;  /* garante que não puxe branco */
+  }
+  
+  
+  .balao {
+    background: white;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 20px 25px;   /* aumenta espaço interno */
+    font-size: 20px;      /* texto um pouco maior */
+    line-height: 1.6;
+    max-width: 400px;     /* balão mais largo */
+    text-align: left;
+  }
+  
+  
+  
+  
+  
+  .opcoes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .opcao {
+    background: #FFD600;
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+  }
+  
+  .opcao:hover {
+    background: #ffcc00;
+  }
+  
+  .opcao.ativo {
+    background: orange;
+    color: white;
+  }
+  
+  /* Botão de "outros" com input */
+  .opcao.outros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #input-outros {
+    display: none; /* escondido no início */
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 90%;
+  }
+  #input-outros.ativo {
+    display: block;
+  }
+  
+  #confirmar {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 200px;
+  }
+  
+  #confirmar:hover {
+    background: #218838;
+  }

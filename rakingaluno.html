@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>👩‍🏫 Plataforma Tutoria - Professor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1>🎓 TUTORIA</h1>
+                <p class="app-subtitle">Sua plataforma de estudos inteligente</p>
+            </div>
+            <div class="user-menu">
+              <a href="perfil.html" class="user-btn">👤</a>
+            </div>
+            <div id="menu-toggle">☰</div>
+            
+        </header>
+        <aside id="side-menu">
+          <ul>
+            <li><a href="atividades.html">📝 Atividades</a></li>
+            <li><a href="aulas.html">📖 Aulas</a></li>
+            <li><a href="videoaula_aluno.html">🎥 Vídeo Aulas</a></li>
+            <li><a href="datasimportates.html">📅 Datas Importantes</a></li>
+            <li><a href="simulados.html">📚 Simulados</a></li>
+            <li><a href="cronograma.html">🗓️ Cronograma</a></li>
+            <li><a href="chat.html">💬 Chat</a></li>
+            <li><a href="jogo.html">🎮 jogo</a></li>
+            <li><a href="anotacoes.html">🗒️ Anotações</a></li>
+          </ul>
+        </aside>
+
+    <!-- TRILHA -->
+    <section class="trilha">
+      <h2>🚀 Trilha: Números e Operações</h2>
+      <div class="botoes">
+        <button class="btn ativo" id="btnHistorico">📘 Histórico</button>
+        <button class="btn" id="btnRanking">🏆 Ranking</button>
+        <p class="pontos">Pontuação média da turma: <strong>— / —</strong></p>
+      </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="content">
+      <!-- HISTÓRICO -->
+      <section id="telaHistorico" class="tela ativa">
+        <h2>📘 Histórico de Atividades da Turma</h2>
+        <table class="tabela">
+          <thead>
+            <tr><th>Aluno</th><th>Atividade</th><th>Data</th><th>Nota</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Maria Clara</td><td>Quiz dos Números</td><td>27/10/2025</td><td>95%</td></tr>
+            <tr><td>João Pedro</td><td>Desafio Relâmpago</td><td>25/10/2025</td><td>80%</td></tr>
+            <tr><td>Ana Luiza</td><td>Quebra-Cabeça Matemático</td><td>23/10/2025</td><td>100%</td></tr>
+          </tbody>
+        </table>
+        <p class="resumo">🟡 Média da turma: <strong>91%</strong> — Excelente desempenho!</p>
+      </section>
+
+      <!-- RANKING -->
+      <section id="telaRanking" class="tela">
+        <h2>⭐ Top Estudantes</h2>
+        <div id="rankingList" class="ranking-list"></div>
+
+        <h3>🎓 Melhor da Turma</h3>
+        <div id="meuRanking" class="meu-ranking"></div>
+
+        <h3>📋 Lista Completa de Pontos</h3>
+        <table id="tabelaRanking" class="tabela pontos-table">
+          <thead>
+            <tr>
+              <th>Posição</th>
+              <th>Aluno</th>
+              <th>Pontos</th>
+              <th>Tempo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Será preenchido via JS -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- BOTÃO DE ATUALIZAR PONTOS FORA DAS SEÇÕES -->
+      <div class="ranking-footer">
+        <button id="shuffleBtn">🔄 Atualizar Pontos</button>
+      </div>
+    </main>
+
+    <!-- FOOTER PRINCIPAL -->
+    <footer class="app-footer">
+      <div class="footer-content">
+        <p>📞 <strong>DEPARTAMENTO DE TUTORIA</strong></p>
+        <p>✉️ contato@tutoria.com | 📱 (11) 9999-9999</p>
+        <div class="footer-links">
+          <button onclick="abrirSobre()">Sobre</button>
+          <button onclick="abrirAjuda()">Ajuda</button>
+          <button onclick="abrirConfiguracoes()">Configurações</button>
+        </div>
+      </div>
+    </footer>
+
+  </div> <!-- /app-container -->
+
+  <!-- SCRIPTS -->
+  <script src="menu.js"></script>
+  <script src="aluno.js"></script>
+
+</body>
+</html>

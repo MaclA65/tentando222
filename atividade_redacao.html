@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atividade de Redação</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    textarea {
+      width: 100%;
+      height: 200px;
+      margin-top: 15px;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: none;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #f7d71e;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .finalizado {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1>🎓 TUTORIA</h1>
+                <p class="app-subtitle">Sua plataforma de estudos inteligente</p>
+            </div>
+            <div class="user-menu">
+              <a href="perfil.html" class="user-btn">👤</a>
+            </div>
+            <div id="menu-toggle">☰</div>
+            
+        </header>
+        <aside id="side-menu">
+          <ul>
+            <li><a href="atividades.html">📝 Atividades</a></li>
+            <li><a href="aulas.html">📖 Aulas</a></li>
+            <li><a href="videoaula_aluno.html">🎥 Vídeo Aulas</a></li>
+            <li><a href="datasimportates.html">📅 Datas Importantes</a></li>
+            <li><a href="simulados.html">📚 Simulados</a></li>
+            <li><a href="cronograma.html">🗓️ Cronograma</a></li>
+            <li><a href="chat.html">💬 Chat</a></li>
+            <li><a href="jogo.html">🎮 jogo</a></li>
+            <li><a href="anotacoes.html">🗒️ Anotações</a></li>
+          </ul>
+        </aside>
+  <main class="card">
+    <h1>Atividade de Redação</h1>
+    <p><strong>Tema:</strong> A importância da empatia na sociedade contemporânea.</p>
+    <p>Desenvolva uma redação dissertativo-argumentativa sobre o tema acima, apresentando uma tese, argumentos e uma proposta de intervenção.</p>
+
+    <textarea id="redacao" placeholder="Escreva sua redação aqui..."></textarea>
+    <button id="enviar">Enviar Redação</button>
+
+    <a class="pill back" href="redacao.html">⬅ Voltar</a>
+  </main>
+
+  <script>
+    const btn = document.getElementById("enviar");
+    const texto = document.getElementById("redacao");
+
+    btn.addEventListener("click", () => {
+      if (texto.value.trim() === "") {
+        alert("Por favor, escreva sua redação antes de enviar!");
+        return;
+      }
+
+      texto.disabled = true;
+      btn.textContent = "Enviado ✅";
+      btn.classList.add("finalizado");
+      btn.disabled = true;
+      alert("Redação enviada com sucesso!");
+    });
+  </script>
+<footer class="app-footer">
+    <div class="footer-content">
+        <p>📞 <strong>DEPARTAMENTO DE TUTORIA</strong></p>
+        <p>✉️ contato@tutoria.com | 📱 (11) 9999-9999</p>
+        <div class="footer-links">
+            <button onclick="abrirSobre()">Sobre</button>
+            <button onclick="abrirAjuda()">Ajuda</button>
+            <button onclick="abrirConfiguracoes()">Configurações</button>
+        </div>
+    </div>
+  </footer>
+  </div>    
+  </div>
+  
+  <script src="menu.js"></script>
+  
+  </body>
+  </html>
+  

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anotações</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1>🎓 TUTORIA</h1>
+                <p class="app-subtitle">Sua plataforma de estudos inteligente</p>
+            </div>
+            <div class="user-menu">
+              <a href="perfilpro.html" class="user-btn">👤</a>
+            </div>
+            <div id="menu-toggle">☰</div>
+            
+        </header>
+        <aside id="side-menu">
+          <ul>
+            <li><a href="aulaspro.html">📖 Aulas</a></li>
+            <li><a href="videoaulapro.html">🎥 Vídeo Aulas</a></li>
+            <li><a href="datasimportatespro.html">📅 Datas Importantes</a></li>
+            <li><a href="cronogramapro.html">🗓️ Cronograma</a></li>
+            <li><a href="chatpro.html">💬 Chat</a></li>
+            <li><a href="anotacoespro.html">🗒️ Anotações</a></li>
+          </ul>
+        </aside>
+    <!-- Conteúdo principal -->
+    <main>
+      <section id="anotacoes" class="content-section">
+        <h1>🗒️ Anotações</h1>
+        <div class="dates-container">
+          <div class="date-card">
+            <h3>Hoje</h3>
+            <textarea id="nota-hoje" placeholder="Escreva suas anotações de hoje..."></textarea>
+          </div>
+          <div class="date-card">
+            <h3>Ontem</h3>
+            <textarea id="nota-ontem" placeholder="Escreva suas anotações de ontem..."></textarea>
+          </div>
+        </div>
+        <div class="anotacoes-buttons">
+          <button onclick="salvarNotas()">💾 Salvar</button>
+          <button onclick="limparNotas()">🗑️ Apagar</button>
+        </div>
+        <p id="anotacoes-msg" class="msg"></p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-content">
+          <p>📞 <strong>DEPARTAMENTO DE TUTORIA</strong></p>
+          <p>✉️ contato@tutoria.com | 📱 (11) 9999-9999</p>
+          <div class="footer-links">
+              <button onclick="abrirSobre()">Sobre</button>
+              <button onclick="abrirAjuda()">Ajuda</button>
+              <button onclick="abrirConfiguracoes()">Configurações</button>
+          </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Função para salvar notas
+    function salvarNotas() {
+      const notaHoje = document.getElementById('nota-hoje').value;
+      const notaOntem = document.getElementById('nota-ontem').value;
+
+      localStorage.setItem('notaHoje', notaHoje);
+      localStorage.setItem('notaOntem', notaOntem);
+
+      mostrarMensagem("Notas salvas com sucesso!");
+    }
+
+    // Função para limpar notas
+    function limparNotas() {
+      document.getElementById('nota-hoje').value = '';
+      document.getElementById('nota-ontem').value = '';
+
+      localStorage.removeItem('notaHoje');
+      localStorage.removeItem('notaOntem');
+
+      mostrarMensagem("Notas apagadas.");
+    }
+
+    // Função para exibir mensagem temporária
+    function mostrarMensagem(msg) {
+      const mensagem = document.getElementById('anotacoes-msg');
+      mensagem.textContent = msg;
+      setTimeout(() => { mensagem.textContent = ''; }, 3000);
+    }
+
+    // Carregar notas salvas ao abrir a página
+    window.onload = function() {
+      const notaHoje = localStorage.getItem('notaHoje') || '';
+      const notaOntem = localStorage.getItem('notaOntem') || '';
+
+      document.getElementById('nota-hoje').value = notaHoje;
+      document.getElementById('nota-ontem').value = notaOntem;
+    };
+  </script>
+  <script src="menu.js"></script>
+
+</body>
+</html>
+
+
+

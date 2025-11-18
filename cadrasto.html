@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <img src="oqvur.png" alt="emoji" class="emoji">
+      <h2>Cadastro</h2>
+
+      <form id="cadastroForm">
+        <!-- Nome -->
+        <div class="input-group">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" required>
+        </div>
+
+        <!-- Idade -->
+        <div class="input-group">
+          <label for="idade">Idade</label>
+          <input type="number" id="idade" min="14" max="100" required>
+        </div>
+
+        <!-- Email -->
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+
+        <!-- Senha -->
+        <div class="input-group">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" required>
+        </div>
+
+        <!-- Confirmar Senha -->
+        <div class="input-group">
+          <label for="confirmarSenha">Confirmar Senha</label>
+          <input type="password" id="confirmarSenha" required>
+        </div>
+
+        <!-- Tipo de Usuário -->
+        <div class="tipo-usuario">
+          <button type="button" class="btn-tipo" data-tipo="aluno">Aluno</button>
+          <button type="button" class="btn-tipo" data-tipo="professor">Professor</button>
+        </div>
+
+        <!-- Botão Confirmar -->
+        <button type="submit" class="btn-confirmar">Confirmar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script de seleção de tipo e envio do formulário -->
+  <script>
+    const botoesTipo = document.querySelectorAll('.btn-tipo');
+    let tipoSelecionado = null;
+
+    // Seleção de tipo de usuário
+    botoesTipo.forEach(botao => {
+      botao.addEventListener('click', () => {
+        botoesTipo.forEach(b => b.classList.remove('active'));
+        botao.classList.add('active');
+        tipoSelecionado = botao.dataset.tipo;
+      });
+    });
+
+    // Submissão do formulário
+    document.getElementById('cadastroForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById('nome').value.trim();
+      const idade = document.getElementById('idade').value;
+      const email = document.getElementById('email').value.trim();
+      const senha = document.getElementById('senha').value;
+      const confirmarSenha = document.getElementById('confirmarSenha').value;
+
+      if (!tipoSelecionado) {
+        alert('Selecione Aluno ou Professor!');
+        return;
+      }
+
+      if (!nome || !idade || !email || !senha || !confirmarSenha) {
+        alert('Preencha todos os campos!');
+        return;
+      }
+
+      if (senha !== confirmarSenha) {
+        alert('As senhas não coincidem!');
+        return;
+      }
+
+      // Redireciona para a página correta
+      if (tipoSelecionado === 'aluno') {
+        window.location.href = 'perguntaaluno1.html';
+      } else {
+        window.location.href = 'perguntasprofer2.html';
+      }
+    });
+  </script>
+</body>
+</html>

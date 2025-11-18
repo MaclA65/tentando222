@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Fredoka One', cursive;
+  background-color: #FFD740;
+  color: #000;
+  overflow-x: hidden;
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #FFC107;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#menu-toggle {
+  position: absolute;
+  left: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+/* Menu lateral */
+#side-menu {
+  position: fixed; 
+  left: -260px;
+  width: 240px;
+  height: 100%;
+  background-color: #FFEB3B;
+  box-shadow: 3px 0 10px rgba(0,0,0,0.2);
+  transition: left 0.3s ease;
+  z-index: 100;
+}
+
+#side-menu ul {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+}
+
+#side-menu li {
+  margin: 18px 0;
+}
+
+#side-menu a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  display: block;
+  transition: transform 0.2s;
+}
+
+#side-menu a:hover {
+  transform: translateX(8px);
+}
+
+/* Conteúdo principal */
+main {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+main h2 {
+  margin-bottom: 10px;
+}

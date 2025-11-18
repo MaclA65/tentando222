@@ -1,0 +1,421 @@
+/* ===============================
+   PERFIL DO USUÁRIO – ESTILO UNIFICADO
+   Compatível com o painel principal
+   =============================== */
+
+/* Fundo com gradiente azul e dourado suave */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(160deg, #e9f5f7, #d6e8e7);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column; /* ✅ MUDANÇA CRÍTICA */
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding: 20px 0;
+  }
+  
+  /* Container principal com efeito glass */
+  .perfil-container {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 40px;
+    width: 90%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px; /* ✅ MUDANÇA CRÍTICA */
+  }
+  
+  /* Animação de entrada suave */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Seção superior (avatar + nome) */
+  .perfil-topo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  
+  .avatar-area {
+    text-align: center;
+  }
+  
+  .avatar-borda {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px auto;
+  }
+  
+  .avatar-borda img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #f7c948;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Botão de mudar avatar */
+  #mudar-avatar {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: #f7c948;
+    color: #1d3557;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  #mudar-avatar:hover {
+    background-color: #f0b429;
+    transform: scale(1.1);
+  }
+  
+  /* Nome e botão de edição */
+  .nome-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  #nome-usuario {
+    font-size: 2rem;
+    color: #1d3557;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  #editar-nome {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #457b9d;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  #editar-nome:hover {
+    transform: scale(1.3);
+    color: #f7c948;
+  }
+  
+  /* Cards de informações */
+  .perfil-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    justify-items: center;
+  }
+  
+  .card {
+    background-color: #e5db17;
+    color: white;
+    border-radius: 15px;
+    padding: 25px;
+    width: 100%;
+    max-width: 280px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+  s
+  .card h2 {
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+  }
+  
+  .card p {
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+  
+  /* Footer */
+  .app-footer {
+    background: #ffc107;
+    color: #eff0dc;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-out;
+    width: 90%;
+    max-width: 900px;
+    margin-top: auto; /* ✅ MUDANÇA CRÍTICA */
+  }
+  
+  .footer-content p {
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  .footer-content p strong {
+    font-weight: 700;
+  }
+  
+  .footer-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .footer-links button {
+    background: none;
+    border: none;
+    color: #e3e4ce;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 8px;
+  }
+  
+  .footer-links button:hover {
+    color: #457b9d;
+    transform: scale(1.1);
+    background: rgba(29, 53, 87, 0.1);
+  }
+  
+  /* Modal de escolha de avatar */
+  .avatar-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease;
+    z-index: 1000;
+  }
+  
+  .avatar-modal-content {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    width: 95%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  .avatar-modal-content h2 {
+    margin-bottom: 20px;
+    color: #1d2a57;
+  }
+  
+  .avatar-opcoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+    padding: 10px;
+  }
+  
+  .avatar-opcoes img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: 0.3s;
+    object-fit: cover;
+  }
+  
+  .avatar-opcoes img:hover {
+    transform: scale(1.1);
+    border: 3px solid #f7c948;
+  }
+  
+  .avatar-opcoes img.selected {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+  }
+  
+  /* Botão de fechar modal */
+  #fechar-modal {
+    background-color: #e7fa0c;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+  }
+  
+  #fechar-modal:hover {
+    background-color: #457b9d;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .perfil-container {
+      padding: 20px;
+    }
+    
+    .perfil-info {
+      grid-template-columns: 1fr;
+    }
+    
+    .avatar-opcoes {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    
+    .avatar-opcoes img {
+      width: 70px;
+      height: 70px;
+    }
+    
+    .avatar-modal-content {
+      width: 95%;
+      padding: 20px;
+    }
+    
+    #nome-usuario {
+      font-size: 1.6rem;
+    }
+    
+    .footer-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .app-footer {
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .avatar-borda {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .avatar-borda img {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .avatar-opcoes {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .avatar-opcoes img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  
+  /* MODAL DE AJUSTES */
+  .ajustes-modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+  }
+  
+  .ajustes-content {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .ajustes-content h2 {
+    color: #e8d609;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .ajustes-content input,
+  .ajustes-content select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+    font-size: 1rem;
+  }
+  
+  .ajustes-btns {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 25px;
+  }
+  
+  .ajustes-btns button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    flex: 1;
+  }
+  
+  #salvar-ajustes {
+    background: #4CAF50;
+    color: white;
+  }
+  
+  #cancelar-ajustes {
+    background: #d9534f;
+    color: white;
+  }
+  
+  .ajustes-btns button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }

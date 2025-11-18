@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tutoria</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Comic+Neue:wght@700&display=swap');
+
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    background: #fff;
+    color: #333;
+  }
+  aside {
+    background: linear-gradient(180deg, #ffcc00 0%, #ff9900 100%);
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 20px;
+    box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+    transition: width 0.4s ease;
+    position: relative;
+  }
+  aside:hover {
+    width: 320px;
+  }
+  .logo {
+    font-family: 'Comic Neue', cursive;
+    font-size: 2.8rem;
+    color: #333;
+    font-weight: 700;
+  }
+  .aside-text {
+    font-style: italic;
+    margin-top: 40px;
+    color: #331a00cc;
+    font-size: 1.05rem;
+    line-height: 1.4;
+  }
+  .redes-sociais {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  .redes-sociais img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .redes-sociais img:hover {
+    transform: scale(1.2);
+  }
+  main {
+    flex-grow: 1;
+    padding: 50px 40px;
+    background: #fafafa;
+    overflow-y: auto;
+  }
+  main h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #ff9900;
+    text-align: center;
+  }
+
+  
+  /* CARROSSEL NOVO */
+  .carousel-wrapper {
+    overflow: hidden;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .carousel {
+    display: flex;
+    gap: 30px; /* mais espaço entre as imagens */
+    animation: scroll 50s linear infinite; /* gira sozinho devagar */
+  }
+
+  .carousel img {
+    width: 200px;  /* tamanho ajustado */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 0.2);
+    background: white;
+    flex-shrink: 0;
+  }
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .stats {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+    justify-content: center;
+  }
+  .stat-box {
+    background: #fff;
+    border-radius: 100%;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgb(0 0 0 / 0.1);
+  }
+  .stat-box strong {
+    font-size: 2.8rem;
+    margin-top: 8px;
+    font-weight: 700;
+  }
+  .stat-box span {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #222;
+  }
+
+  .info-box {
+    background: #fff8d6;
+    border-radius: 12px;
+    padding: 25px 30px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #3a3a00;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 0.05);
+    max-width: 720px;
+    margin-bottom: 30px;
+  }
+  .info-box strong {
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
+
+  .video-section {
+    max-width: 720px;
+    margin-top: 40px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgb(0 0 0 / 0.15);
+    background: #000;
+  }
+  .video-section iframe {
+    width: 100%;
+    height: 400px;
+    display: block;
+  }
+
+  main::-webkit-scrollbar {
+    width: 9px;
+  }
+  main::-webkit-scrollbar-thumb {
+    background: #ffcc00;
+    border-radius: 10px;
+  }
+  .pulse {
+  display: inline-block;
+  animation: pulseEmoji 1.2s infinite ease-in-out;
+}
+
+@keyframes pulseEmoji {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+.inscricao-box {
+  margin-top: 60px;
+  text-align: center;
+  background: #fff4bf;
+  padding: 20px;
+  border-radius: 14px;
+  font-size: 1.2rem; /* tamanho reduzido */
+  font-weight: 700;
+  color: #3a2a00;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 0.1);
+}
+
+.emoji-logo {
+  width: 140px;      /* tamanho da imagem */
+  display: block;
+  margin: 0 auto;    /* centraliza */
+  animation: pulseEmoji 1.2s infinite ease-in-out;
+}
+/* 🔸 Pulsação suave (títulos e botão Inscreva-se) */
+.pulse-suave {
+  display: inline-block;
+  animation: pulseSoft 1.8s infinite ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes pulseSoft {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.07); } /* suave */
+  100% { transform: scale(1); }
+}
+
+</style>
+</head>
+<body>
+
+<aside>
+  <div>
+    <img src="tutorsinho.png" class="emoji-logo" alt="emoji tutor">
+
+    
+    
+    <p class="aside-text">"O sucesso nasce do esforço diário."</p>
+  </div>
+
+  <div class="redes-sociais" aria-label="Redes sociais Tutoria">
+    <a href="#" title="Facebook">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
+    </a>
+    <a href="#" title="Instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" />
+    </a>
+    <a href="#" title="Twitter">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" />
+    </a>
+  </div>
+</aside>
+
+<main>
+
+  <h2 class="pulse-suave">Alunos Aprovados 🎓</h2>
+
+
+
+
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3rfXmJXpGt7H6ts7KYgfKHjY__CO0kQ4Xz2TO401iqGDPJ8zbqqLWQOiJPo_UT-gPNHE&usqp=CAU" alt="Aluno aprovado 1">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiYCLIz2TTJUXKiYNBlFcd-9B8SRNThQwWQBK53kX1k7aUgfBFjGokxmRFI6xhDFED5W0&usqp=CAU" alt="Aluno aprovado 2">
+      <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ_NiDW7pfgAG7Y_ULRhDaokeiEfl_BgeSWiL38jkQf1py9bZiO" alt="Aluno aprovado 3">
+      <img src="https://static.vakinha.com.br/uploads/vakinha/image/5082021/1726333575.107.png" alt="Aluno aprovado 4">
+      <img src="https://static.vakinha.com.br/uploads/user/avatar/8250946/1646516484.2185369.jpg?ims=225x225" alt="Aluno aprovado 5">
+      <!-- duplicando para animação infinita -->
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3rfXmJXpGt7H6ts7KYgfKHjY__CO0kQ4Xz2TO401iqGDPJ8zbqqLWQOiJPo_UT-gPNHE&usqp=CAU" alt="Aluno aprovado 1">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiYCLIz2TTJUXKiYNBlFcd-9B8SRNThQwWQBK53kX1k7aUgfBFjGokxmRFI6xhDFED5W0&usqp=CAU" alt="Aluno aprovado 2">
+      <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ_NiDW7pfgAG7Y_ULRhDaokeiEfl_BgeSWiL38jkQf1py9bZiO" alt="Aluno aprovado 3">
+      <img src="https://static.vakinha.com.br/uploads/vakinha/image/5082021/1726333575.107.png" alt="Aluno aprovado 4">
+      <img src="https://static.vakinha.com.br/uploads/user/avatar/8250946/1646516484.2185369.jpg?ims=225x225" alt="Aluno aprovado 5">
+    </div>
+  </div>
+
+  <div class="info-box">
+    <p><strong>🔥 Por que somos referência?</strong></p>
+
+    <ul>
+      <li><strong>Conteúdo atualizado</strong> sempre alinhado aos vestibulares.</li>
+      <li><strong>Aulas dinâmicas</strong> e focadas no entendimento real.</li>
+      <li><strong>Monitorias dedicadas</strong> para tirar dúvidas.</li>
+      <li><strong>Tutoria personalizada</strong> com metas semanais.</li>
+      <li><strong>Simulados realistas</strong> estilo ENEM e tradicionais.</li>
+      <li><strong>Ambiente acolhedor</strong> com apoio emocional e motivação.</li>
+      <li><strong>Resultados reais</strong> com dezenas de aprovações.</li>
+    </ul>
+  </div>
+
+  <div class="stats">
+    <div class="stat-box">
+      <span>Alunos</span>
+      <strong>1200+</strong>
+    </div>
+    <div class="stat-box">
+      <span>Tutores</span>
+      <strong>350+</strong>
+    </div>
+    <div class="stat-box">
+      <span>Aprovações</span>
+      <strong>800+</strong>
+    </div>
+  </div>
+
+  <div class="video-section">
+    <iframe src="video tutoria.mp4" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <a href="cadrasto.html" class="inscricao-box pulse-suave">
+    📢 <strong>Inscreva-se agora mesmo e comece sua jornada!</strong> 🚀
+  </a>
+  
+  
+
+</main>
+
+</body>
+</html>

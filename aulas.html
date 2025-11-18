@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tutoria - Aulas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-content">
+            <h1>🎓 TUTORIA</h1>
+            <p class="app-subtitle">Sua plataforma de estudos inteligente</p>
+        </div>
+        <div class="user-menu">
+          <a href="perfil.html" class="user-btn">👤</a>
+        </div>
+        <div id="menu-toggle">☰</div>
+        
+    </header>
+    <aside id="side-menu">
+      <ul>
+        <li><a href="atividades.html">📝 Atividades</a></li>
+        <li><a href="aulas.html">📖 Aulas</a></li>
+        <li><a href="videoaula_aluno.html">🎥 Vídeo Aulas</a></li>
+        <li><a href="datasimportates.html">📅 Datas Importantes</a></li>
+        <li><a href="simulados.html">📚 Simulados</a></li>
+        <li><a href="cronograma.html">🗓️ Cronograma</a></li>
+        <li><a href="chat.html">💬 Chat</a></li>
+        <li><a href="jogo.html">🎮 jogo</a></li>
+        <li><a href="anotacoes.html">🗒️ Anotações</a></li>
+      </ul>
+    </aside>
+
+<div id="aulas-page"> <!-- INÍCIO DO ISOLAMENTO -->
+
+  <header>
+     <div id="botao-voltar" class="botao-voltar" onclick="voltarMenu()">←</div>
+     <h1 id="tituloTela">Aulas</h1>
+  </header>
+
+  <main>
+    
+    <!-- MENU DE MATÉRIAS -->
+    <section id="menu" class="tela ativa">
+      <div class="materia-btn" data-mat="portugues">Português</div>
+      <div class="materia-btn" data-mat="matematica">Matemática</div>
+      <div class="materia-btn" data-mat="historia">História</div>
+      <div class="materia-btn" data-mat="geografia">Geografia</div>
+      <div class="materia-btn" data-mat="fisica">Física</div>
+      <div class="materia-btn" data-mat="quimica">Química</div>
+      <div class="materia-btn" data-mat="biologia">Biologia</div>
+      <div class="materia-btn" data-mat="filosofia">Filosofia</div>
+      <div class="materia-btn" data-mat="sociologia">Sociologia</div>
+      <div class="materia-btn" data-mat="literatura">Literatura</div>
+    </section>
+
+    <!-- CONTEÚDO DAS AULAS -->
+    <section id="conteudo" class="tela"></section>
+
+  </main>
+
+</div> <!-- FIM DO ISOLAMENTO -->
+
+
+
+
+  <footer class="app-footer">
+    <div class="footer-content">
+        <p>📞 <strong>DEPARTAMENTO DE TUTORIA</strong></p>
+        <p>✉️ contato@tutoria.com | 📱 (11) 9999-9999</p>
+        <div class="footer-links">
+            <button onclick="abrirSobre()">Sobre</button>
+            <button onclick="abrirAjuda()">Ajuda</button>
+            <button onclick="abrirConfiguracoes()">Configurações</button>
+        </div>
+    </div>
+</footer>
+<script src="aulas.js"></script>
+<script src="menu.js"></script>
+</body>
+</html>
