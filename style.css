@@ -2835,3 +2835,9 @@ main.content {
   background: #f0c440;
 }
       
+.icon-img {
+  width: 32px;     /* tamanho do ícone */
+  height: 32px;
+  border-radius: 50%; /* opcional, deixa redondo */
+  object-fit: cover;
+}
